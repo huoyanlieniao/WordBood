@@ -1,0 +1,5 @@
+<resources>
+	<string name="app_name">WordBook</string>
+	<string name="Activite_Add_Name">Please Input Word</string>
+	<string name="Activity_Add_Explanation">Please Input The Word Explanation</string>
+</resources>
