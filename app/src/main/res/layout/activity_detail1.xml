@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+		>
+	
+		<LinearLayout
+				android:id="@+id/Detail_Name_List"
+				android:layout_width="match_parent"
+				android:layout_height="150dp"
+				android:background="@drawable/background"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintLeft_toLeftOf="parent"
+				app:layout_constraintRight_toRightOf="parent"
+				android:orientation="vertical">
+			
+			<TextView
+					android:id="@+id/Detail_Name"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textSize="50sp"
+					android:textColor="@color/colorAccent"
+					android:textAlignment="center"
+					android:hint="asdkjlfwlejaslf"
+					android:layout_marginTop="20dp"
+					
+					/>
+			<TextView
+					android:id="@+id/Detail_Explanation"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textSize="20sp"
+					android:textAlignment="center"
+					android:hint="asdkjlfwlejaslf"
+					android:layout_marginTop="10dp"
+					/>
+		
+		</LinearLayout>
+		
+		<LinearLayout
+				android:id="@+id/Detail_Sentence"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:layout_constraintTop_toBottomOf="@id/Detail_Name_List"
+				app:layout_constraintLeft_toLeftOf="parent"
+				app:layout_constraintRight_toRightOf="parent"
+				android:orientation="vertical"/>
+	
+	</androidx.constraintlayout.widget.ConstraintLayout>
+

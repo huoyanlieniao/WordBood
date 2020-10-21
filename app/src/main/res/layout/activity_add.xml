@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+                      android:layout_height="match_parent">
+
+	
+	<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+		<EditText
+				android:id="@+id/Add_Add_Name"
+				android:text="@string/Activite_Add_Name"
+				android:layout_width="400dp"
+				android:layout_height="40dp"
+				android:textSize="25dp"
+				android:background="@drawable/background"
+				app:layout_constrainedHeight="true"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintLeft_toLeftOf="parent"
+				app:layout_constraintRight_toRightOf="parent"
+				android:layout_marginLeft="1dp"
+				android:layout_marginTop="20dp"
+				app:layout_constraintHorizontal_bias="0.454"/>
+		
+		<LinearLayout
+				android:id="@+id/lexplanation"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/background"
+				android:layout_marginLeft="1dp"
+				android:layout_marginTop="40dp"
+				app:layout_constraintTop_toBottomOf="@id/Add_Add_Name"
+				app:layout_constraintLeft_toLeftOf="parent"
+				app:layout_constraintRight_toRightOf="parent"
+				android:orientation="vertical"
+				app:layout_constraintHorizontal_bias="0.0">
+			
+			<Button
+					android:id="@+id/Add_Add_Explanation_Button"
+					android:text="添加释义"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:onClick="Add_Explanation"
+					/>
+			
+			
+		</LinearLayout>
+		
+		
+		<LinearLayout
+				android:id="@+id/lsentence"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/background"
+				app:layout_constraintTop_toBottomOf="@id/lexplanation"
+				app:layout_constraintLeft_toLeftOf="parent"
+				app:layout_constraintRight_toRightOf="parent"
+				android:layout_marginLeft="1dp"
+				android:layout_marginTop="12dp"
+				android:orientation="vertical"
+				app:layout_constraintHorizontal_bias="0.0">
+			
+			<Button
+					android:id="@+id/Add_Add_Sentence_Button"
+					android:text="添加例句"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:onClick="Add_Sentence"
+					/>
+		
+		
+		</LinearLayout>
+		<LinearLayout
+				android:id="@+id/lchinese"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/background"
+				android:layout_marginLeft="1dp"
+				android:layout_marginTop="12dp"
+				app:layout_constraintTop_toBottomOf="@id/lsentence"
+				app:layout_constraintLeft_toLeftOf="parent"
+				app:layout_constraintRight_toRightOf="parent"
+				android:orientation="vertical"
+				app:layout_constraintHorizontal_bias="0.0">
+		
+		</LinearLayout>
+		
+		<Button
+			    android:id="@+id/Add_True"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+			    android:onClick="Add_True"
+			    android:hint="确定"
+				app:layout_constraintTop_toBottomOf="@id/lchinese"
+			    app:layout_constraintLeft_toLeftOf="parent"
+			    app:layout_constraintRight_toLeftOf="@id/Add_False"
+				/>
+		<Button
+			    android:id="@+id/Add_False"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:onClick="Add_False"
+			    android:hint="取消"
+			    app:layout_constraintTop_toBottomOf="@id/lchinese"
+			    app:layout_constraintLeft_toRightOf="@id/Add_True"
+			    app:layout_constraintRight_toRightOf="parent"
+			    app:layout_constraintBottom_toBottomOf="@id/Add_True"
+				/>
+	
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
