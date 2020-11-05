@@ -1,5 +1,8 @@
 <resources>
-	<string name="app_name">WordBook</string>
-	<string name="Activite_Add_Name">Please Input Word</string>
-	<string name="Activity_Add_Explanation">Please Input The Word Explanation</string>
+    <string name="app_name">WordBook</string>
+    <string name="Activite_Add_Name">Please Input Word</string>
+    <string name="Activity_Add_Explanation">Please Input The Word Explanation</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -32,7 +32,6 @@ public class Add_Activity extends AppCompatActivity {
         Add_Chinese(view);
     }
 
-
     /**
      * @Author sun
      * @Description 添加例句汉语
