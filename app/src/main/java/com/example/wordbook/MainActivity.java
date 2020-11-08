@@ -7,8 +7,12 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
-import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.wordbook.Fragment.BlankFragment;
+import com.example.wordbook.Fragment.Word_List;
+import com.example.wordbook.Model.Word;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -20,24 +24,34 @@ public class MainActivity extends AppCompatActivity{
         if (ori == Configuration.ORIENTATION_LANDSCAPE) {
             //横屏
             setContentView(R.layout.activity_main);
+
+            //数据
+            ArrayList<Word> word = new ArrayList<>();
+            for(int i=0;i<20;i++){
+                Word word1=new Word(i+"");
+                word.add(word1);
+            }
+
+            //替换界面
             BlankFragment blankFragment=new BlankFragment();
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.aaaaa,blankFragment)
+                    .replace(R.id.Second_change,blankFragment)
                     .commit();
-            Toast.makeText(MainActivity.this,"aaaa",Toast.LENGTH_LONG).show();
 
-            Wordlist wordlist=new Wordlist();
+            Word_List word_list=new Word_List(getFragmentManager(),word);
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.bbbb,wordlist)
+                    .replace(R.id.First_change,word_list)
                     .commit();
+
+
+
 
         } else if (ori == Configuration.ORIENTATION_PORTRAIT) {
             //竖屏
             setContentView(R.layout.activity_main);
         }
-        //setContentView(R.layout.activity_main);
 
     }
 
