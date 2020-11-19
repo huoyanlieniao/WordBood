@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import com.example.wordbook.Model.Word;
 import com.example.wordbook.R;
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 
@@ -18,45 +19,35 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Word_List extends Fragment implements AdapterView.OnItemClickListener {
+public class Word_List extends Fragment {
 
-    private android.app.FragmentManager fragmentManager;
     private ArrayList<Word> words;
-    private ListView listView;
+
+    public Word_List(ArrayList<Word> words) {
+        // Required empty public constructor
+        this.words=words;
+
+    }
 
     public Word_List() {
-        // Required empty public constructor
     }
-
-
-    public Word_List(android.app.FragmentManager fragmentManager, ArrayList<Word> word) {
-        this.fragmentManager=fragmentManager;
-        this.words=word;
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View inflate = inflater.inflate(R.layout.fragment_listvie, container, false);
-        listView=inflate.findViewById(R.id.list_item);
         Word_List_Adapter word_list_adapter=new Word_List_Adapter(words,getActivity());
+        ListView listView=inflate.findViewById(R.id.list_item);
         listView.setAdapter(word_list_adapter);
-        listView.setOnItemClickListener(this);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                 Word word=words.get(position);
+                EventBus.getDefault().postSticky(word);
+            }
+        });
         return inflate;
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        BlankFragment blankFragment=new BlankFragment();
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.Second_change,blankFragment)
-                .commit();
-    }
 
-    private FragmentManager getSupportFragmentManager() {
-        return null;
-    }
 }

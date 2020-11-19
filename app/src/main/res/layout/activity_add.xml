@@ -12,7 +12,7 @@
 		<EditText
 				android:id="@+id/Add_Add_Name"
 				android:text="@string/Activite_Add_Name"
-				android:layout_width="400dp"
+				android:layout_width="match_parent"
 				android:layout_height="40dp"
 				android:textSize="25dp"
 				android:background="@drawable/background"
@@ -102,7 +102,7 @@
 				android:layout_width="0dp"
 				android:layout_height="0dp"
 				android:onClick="Add_False"
-			    android:hint="取消"
+			    android:hint="更新"
 			    app:layout_constraintTop_toBottomOf="@id/lchinese"
 			    app:layout_constraintLeft_toRightOf="@id/Add_True"
 			    app:layout_constraintRight_toRightOf="parent"

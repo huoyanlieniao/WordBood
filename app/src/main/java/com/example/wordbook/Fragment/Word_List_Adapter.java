@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import com.example.wordbook.Model.Word;
@@ -49,7 +50,6 @@ public class Word_List_Adapter extends BaseAdapter {
             viewHolder.word_explation= (TextView) convertView.findViewById(R.id.Word_Explation);
             viewHolder.word_sentence= (TextView) convertView.findViewById(R.id.Word_Sentence);
             convertView.setTag(viewHolder);
-
         }else{
             viewHolder = (ViewHolder) convertView.getTag();
         }
@@ -58,6 +58,8 @@ public class Word_List_Adapter extends BaseAdapter {
        // viewHolder.word_sentence.setText(Word.get(position).getWord_Sentence().toString());
         return convertView;
     }
+
+
 
 
     private class ViewHolder{
